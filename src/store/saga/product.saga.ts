@@ -1,6 +1,8 @@
 import {put, takeEvery} from 'redux-saga/effects'
-import {setProducts} from "../slices/product.slice";
+
 import {sagaActions} from './actions'
+import {setProducts} from "../slices/product.slice";
+
 
 interface FetchProductFromApiProps {
     limit: number,

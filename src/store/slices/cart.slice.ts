@@ -1,5 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+
 import {CartState, CartUnit} from "../../types/cart.type";
+
 
 const initialState: CartState = {
     items: [],
@@ -8,7 +10,6 @@ const initialState: CartState = {
     cartVisible: false,
     dragActive: false
 }
-
 
 const cartSlice = createSlice({
     name: 'cart',

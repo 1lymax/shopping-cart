@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import {useAppSelector} from "../../hooks/appHook";
+
 import CartItem from "./CartItem";
 import CartButton from "./CartButton";
+import {useAppSelector} from "../../hooks/appHook";
 import {useCartActions} from "../../hooks/actions";
+
 
 interface StyledContainerProps {
     isVisible: boolean

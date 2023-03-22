@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import {Product} from "../types/product.type";
 import styled from "styled-components";
+
+import {Product} from "../types/product.type";
 import {useCartActions} from "../hooks/actions";
 import {useAppSelector} from "../hooks/appHook";
 

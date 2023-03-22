@@ -1,7 +1,9 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
+
 import {CartUnit} from "../../types/cart.type";
 import {useCartActions} from "../../hooks/actions";
+
 
 const Container = styled.div`
   width: 300px;

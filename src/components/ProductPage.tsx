@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import styled from "styled-components";
-import ProductItem from "./ProductItem";
-import {sagaActions} from "../store/saga/actions";
 import {useDispatch} from "react-redux";
+
+import ProductItem from "./ProductItem";
 import {useAppSelector} from "../hooks/appHook";
+import {sagaActions} from "../store/saga/actions";
 
 const Container = styled.div`
   padding: 20px;
