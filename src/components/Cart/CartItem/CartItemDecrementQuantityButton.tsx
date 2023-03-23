@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {useCartActions} from "../../../hooks/actions";
 import {ICartUnit} from "../../../types/cart.type";
+import {useCartItemDecrementQuantity} from "../../../hooks/Cart/useCartItemDecrementQuantity";
 
 
-const Container = styled.button`
+const DecrementButton = styled.button`
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -14,18 +14,12 @@ interface ICartItemDecrementQuantityButtonProps {
 }
 
 const CartItemDecrementQuantityButton: FC<ICartItemDecrementQuantityButtonProps> = ({ item }) => {
-    const {decrementQuantity, setTotalItems, setTotalPrice} = useCartActions()
-
-    const handleClick =() => {
-        decrementQuantity(item)
-        setTotalItems()
-        setTotalPrice()
-    }
+    const buttonProps = useCartItemDecrementQuantity(item)
 
     return (
-        <Container onClick={handleClick}>
+        <DecrementButton {...buttonProps}>
             -
-        </Container>
+        </DecrementButton>
     );
 };
 
