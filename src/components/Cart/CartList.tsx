@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import CartItem from "./CartItem/CartItem";
 import styled from "styled-components";
+import CartItem from "./CartItem/CartItem";
 import {useAppSelector} from "../../hooks/appHook";
 
 const ItemsWrapper = styled.div`
@@ -21,10 +21,10 @@ const PriceTotal = styled.div`
   margin: 10px 0 0 0;
 `
 
-interface ICartList {
+interface ICartListProps {
 }
 
-const CartList: FC<ICartList> = () => {
+const CartList: FC<ICartListProps> = () => {
     const {items, totalItems, totalPrice} = useAppSelector(state => state.cart)
     return (
         <div>

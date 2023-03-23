@@ -9,11 +9,11 @@ const Container = styled.button`
   background-color: transparent;
   cursor: pointer;
 `
-interface ICartItemDecrementQuantity {
+interface ICartItemDecrementQuantityButtonProps {
     item: ICartUnit,
 }
 
-const CartItemDecrementQuantity: FC<ICartItemDecrementQuantity> = ({ item }) => {
+const CartItemDecrementQuantityButton: FC<ICartItemDecrementQuantityButtonProps> = ({ item }) => {
     const {decrementQuantity, setTotalItems, setTotalPrice} = useCartActions()
 
     const handleClick =() => {
@@ -29,4 +29,4 @@ const CartItemDecrementQuantity: FC<ICartItemDecrementQuantity> = ({ item }) => 
     );
 };
 
-export default CartItemDecrementQuantity;
+export default CartItemDecrementQuantityButton;

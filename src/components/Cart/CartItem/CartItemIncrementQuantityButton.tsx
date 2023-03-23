@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {useCartActions} from "../../../hooks/actions";
 import {ICartUnit} from "../../../types/cart.type";
+import {useCartActions} from "../../../hooks/actions";
 
 
 const Container = styled.button`
@@ -9,11 +9,11 @@ const Container = styled.button`
   background-color: transparent;
   cursor: pointer;
 `
-interface ICartItemIncrementQuantity {
+interface ICartItemIncrementQuantityButtonProps {
     item: ICartUnit;
 }
 
-const CartItemIncrementQuantity: FC<ICartItemIncrementQuantity> = ({ item }) => {
+const CartItemIncrementQuantityButton: FC<ICartItemIncrementQuantityButtonProps> = ({ item }) => {
     const {incrementQuantity, setTotalItems, setTotalPrice} = useCartActions()
 
     const handleClick = () => {
@@ -29,4 +29,4 @@ const CartItemIncrementQuantity: FC<ICartItemIncrementQuantity> = ({ item }) => 
     );
 };
 
-export default CartItemIncrementQuantity;
+export default CartItemIncrementQuantityButton;

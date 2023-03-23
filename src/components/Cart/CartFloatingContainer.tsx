@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
+import CartList from "./CartList";
 import {useAppSelector} from "../../hooks/appHook";
 import {useCartActions} from "../../hooks/actions";
-import CartList from "./CartList";
 
 
 interface IStyledContainerProps {

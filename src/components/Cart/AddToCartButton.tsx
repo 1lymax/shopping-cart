@@ -12,11 +12,11 @@ const Container = styled.button`
 `
 
 
-interface IAddToCartButton {
+interface IAddToCartButtonProps {
     product: IProduct
 }
 
-const AddToCartButton: FC<IAddToCartButton> = ({ product }) => {
+const AddToCartButton: FC<IAddToCartButtonProps> = ({ product }) => {
     const { items } = useAppSelector(state => state.cart)
     const {addToCart, setTotalItems, setTotalPrice} = useCartActions()
     const isInCart = items.find(item => item.id === product.id)

@@ -2,10 +2,10 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 
 import {ICartUnit} from "../../../types/cart.type";
-import CartItemIncrementQuantity from "./CartItemIncrementQuantity";
-import CartItemDecrementQuantity from "./CartItemDecrementQuantity";
-import CartItemQuantityInput from "./CartItemQuantityInput";
 import CartItemRemoveButton from "./CartItemRemoveButton";
+import CartItemQuantityInput from "./CartItemQuantityInput";
+import CartItemIncrementQuantityButton from "./CartItemIncrementQuantityButton";
+import CartItemDecrementQuantityButton from "./CartItemDecrementQuantityButton";
 
 
 const Container = styled.div`
@@ -26,11 +26,11 @@ const Price = styled.div`
 const ActionsWrapper = styled.div``
 
 
-interface CartItemProps {
+interface ICartItemProps {
     item: ICartUnit
 }
 
-const CartItem: FC<CartItemProps> = (props) => {
+const CartItem: FC<ICartItemProps> = (props) => {
     const { item } = props
 
     return (
@@ -42,9 +42,9 @@ const CartItem: FC<CartItemProps> = (props) => {
                 </Price>
             </Title>
             <ActionsWrapper>
-                <CartItemDecrementQuantity item={item}/>
+                <CartItemDecrementQuantityButton item={item}/>
                 <CartItemQuantityInput item={item}/>
-                <CartItemIncrementQuantity item={item}/>
+                <CartItemIncrementQuantityButton item={item}/>
                 <CartItemRemoveButton item={item}>Del</CartItemRemoveButton>
             </ActionsWrapper>
 

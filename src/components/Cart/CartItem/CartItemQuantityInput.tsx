@@ -13,11 +13,11 @@ const Container = styled.input`
   box-shadow: inset 1px 1px 3px #c7c7c7;
 `
 
-interface ICartItemQuantityInput {
+interface ICartItemQuantityInputProps {
     item: ICartUnit
 }
 
-const CartItemQuantityInput: FC<ICartItemQuantityInput> = ({ item }) => {
+const CartItemQuantityInput: FC<ICartItemQuantityInputProps> = ({ item }) => {
     const { setQuantity, setTotalPrice, setTotalItems} = useCartActions()
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
