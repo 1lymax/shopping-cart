@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {useCartActions} from "../../hooks/actions";
-import {ICartUnit} from "../../types/cart.type";
+import {useCartActions} from "../../../hooks/actions";
+import {ICartUnit} from "../../../types/cart.type";
 
 
 const Container = styled.button`

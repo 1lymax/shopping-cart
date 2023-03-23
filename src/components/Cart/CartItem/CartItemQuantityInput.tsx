@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {ICartUnit} from "../../types/cart.type";
-import {useCartActions} from "../../hooks/actions";
+import {ICartUnit} from "../../../types/cart.type";
+import {useCartActions} from "../../../hooks/actions";
 
 const Container = styled.input`
   width: 25px;

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 
-import {ICartUnit} from "../../types/cart.type";
+import {ICartUnit} from "../../../types/cart.type";
 import CartItemIncrementQuantity from "./CartItemIncrementQuantity";
 import CartItemDecrementQuantity from "./CartItemDecrementQuantity";
 import CartItemQuantityInput from "./CartItemQuantityInput";

@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
 import {useCartActions} from "./hooks/actions";
+import CartFloatingContainer from "./components/Cart/CartFloatingContainer";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     return (
         <div>
             <Navbar/>
+            <CartFloatingContainer/>
             <ProductPage/>
         </div>
     );

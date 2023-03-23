@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
-import Cart from "./Cart/Cart";
+import CartNavButton from "./Cart/CartNavButton";
 
 const Container = styled.div`
   width: calc(100% - 30px);
@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <Container>
             <Label>Drag'n'Drop Shopping Cart Example</Label>
-            <Cart/>
+            <CartNavButton/>
         </Container>
     );
 };

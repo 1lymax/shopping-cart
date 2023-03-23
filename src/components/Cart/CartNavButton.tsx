@@ -18,7 +18,7 @@ const Container = styled.div<StyledContainerProps>`
   border: ${props => props.isDragActive ? '3px dashed dodgerblue' : '3px solid transparent'};
 `
 
-const CartButton = () => {
+const CartNavButton = () => {
     const { dragActive, items } = useAppSelector(state => state.cart)
     const { setCartVisible, addToCart, setTotalPrice, setTotalItems } = useCartActions()
 
@@ -52,4 +52,4 @@ const CartButton = () => {
     );
 };
 
-export default CartButton;
+export default CartNavButton;
