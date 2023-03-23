@@ -4,11 +4,9 @@ import styled from "styled-components";
 import {IProduct} from "../../types/product.type";
 import {useAppSelector} from "../../hooks/appHook";
 import {useCartActions} from "../../hooks/actions";
+import {Button} from "../../theme/Button";
 
-const Container = styled.button`
-  border: 1px solid grey;
-  border-radius: 5px;
-  background-color: #e7e7e7;
+const AddButton = styled(Button)`
 `
 
 
@@ -30,9 +28,9 @@ const AddToCartButton: FC<IAddToCartButtonProps> = ({ product }) => {
     }
 
     return (
-        <Container onClick={handleClick}>
+        <AddButton onClick={handleClick}>
             {isInCart ? 'Already added' : 'Add to Cart'}
-        </Container>
+        </AddButton>
     );
 };
 

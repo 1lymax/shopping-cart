@@ -2,12 +2,10 @@ import styled from "styled-components";
 import React, {PropsWithChildren} from 'react';
 import {ICartUnit} from "../../../types/cart.type";
 import {useCartActions} from "../../../hooks/actions";
+import {Button} from "../../../theme/Button";
 
-const Container = styled.button`
-  margin-left: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  background-color: #e7e7e7;
+const RemoveButton = styled(Button)`
+margin-left: 10px;
 `
 
 type CartItemRemoveButtonProps = {
@@ -24,9 +22,9 @@ const CartItemRemoveButton = (props: PropsWithChildren<CartItemRemoveButtonProps
     }
 
     return (
-        <Container onClick={handleClick}>
+        <RemoveButton onClick={handleClick}>
             {props.children}
-        </Container>
+        </RemoveButton>
     );
 };
 

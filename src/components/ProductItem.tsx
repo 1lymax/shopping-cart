@@ -4,23 +4,22 @@ import styled from "styled-components";
 import {IProduct} from "../types/product.type";
 import {useCartActions} from "../hooks/actions";
 import AddToCartButton from "./Cart/AddToCartButton";
+import {theme} from "../theme";
+import {Card} from "../theme/Card";
 
 
-const Container = styled.div`
+const Container = styled(Card)`
   width: 150px;
   height: 200px;
   padding: 20px;
   margin: 20px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px #c7c7c7;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `
 const Title = styled.div`
   font-size: 1.2rem;
-  color: dodgerblue;
+  color: ${theme.headerColor};
 `
 const Footer = styled.div`
   position: relative;

@@ -2,15 +2,11 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 import {ICartUnit} from "../../../types/cart.type";
 import {useCartActions} from "../../../hooks/actions";
+import {Input} from "../../../theme/Input";
 
-const Container = styled.input`
+const QuantityInput = styled(Input)`
   width: 25px;
   text-align: center;
-  border: 1px solid lightgray;
-  padding: 5px;
-  margin: 3px;
-  border-radius: 5px;
-  box-shadow: inset 1px 1px 3px #c7c7c7;
 `
 
 interface ICartItemQuantityInputProps {
@@ -29,8 +25,8 @@ const CartItemQuantityInput: FC<ICartItemQuantityInputProps> = ({ item }) => {
     }
 
     return (
-        <Container value={item.quantity} onChange={handleChange}>
-        </Container>
+        <QuantityInput value={item.quantity} onChange={handleChange}>
+        </QuantityInput>
     );
 };
 
