@@ -14,7 +14,7 @@ const Container = styled.div`
 `
 
 const ProductPage = () => {
-    const {products} = useAppSelector(state => state.product)
+    const { products } = useAppSelector(state => state.product)
     const dispatch = useDispatch()
 
     // Initialize product list from api

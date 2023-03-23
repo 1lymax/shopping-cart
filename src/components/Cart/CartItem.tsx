@@ -1,8 +1,11 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 
-import {CartUnit} from "../../types/cart.type";
-import {useCartActions} from "../../hooks/actions";
+import {ICartUnit} from "../../types/cart.type";
+import CartItemIncrementQuantity from "./CartItemIncrementQuantity";
+import CartItemDecrementQuantity from "./CartItemDecrementQuantity";
+import CartItemQuantityInput from "./CartItemQuantityInput";
+import CartItemRemoveButton from "./CartItemRemoveButton";
 
 
 const Container = styled.div`
@@ -21,74 +24,14 @@ const Price = styled.div`
   color: gray;;
 `
 const ActionsWrapper = styled.div``
-const Decrement = styled.button`
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-`
-const Increment = styled.button`
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-`
 
-const QuantityInput = styled.input`
-  width: 25px;
-  text-align: center;
-  border: 1px solid lightgray;
-  padding: 5px;
-  margin: 3px;
-  border-radius: 5px;
-  box-shadow: inset 1px 1px 3px #c7c7c7;
-`
-const RemoveButton = styled.button`
-  margin-left: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  background-color: #e7e7e7;
-`
 
 interface CartItemProps {
-    item: CartUnit
+    item: ICartUnit
 }
 
 const CartItem: FC<CartItemProps> = (props) => {
     const { item } = props
-    const {
-        decrementQuantity,
-        incrementQuantity,
-        setQuantity,
-        setTotalItems,
-        setTotalPrice,
-        removeItem
-    } = useCartActions()
-
-    const handleDecrement =() => {
-        decrementQuantity(item)
-        setTotals()
-    }
-
-    const handleIncrement =() => {
-        incrementQuantity(item)
-        setTotals()
-    }
-
-    const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const updatedQuantity = parseInt(e.target.value)
-        const { quantity, ...rest } = item
-        setQuantity({ ...rest, quantity: updatedQuantity })
-        setTotals()
-    }
-
-    const handleRemoveItem = () => {
-        removeItem(item)
-        setTotals()
-    }
-
-    const setTotals = () => {
-        setTotalItems()
-        setTotalPrice()
-    }
 
     return (
         <Container>
@@ -99,10 +42,10 @@ const CartItem: FC<CartItemProps> = (props) => {
                 </Price>
             </Title>
             <ActionsWrapper>
-                <Decrement onClick={handleDecrement}>-</Decrement>
-                <QuantityInput value={item.quantity} onChange={handleQuantityChange}/>
-                <Increment onClick={handleIncrement}>+</Increment>
-                <RemoveButton onClick={handleRemoveItem}>Del</RemoveButton>
+                <CartItemDecrementQuantity item={item}/>
+                <CartItemQuantityInput item={item}/>
+                <CartItemIncrementQuantity item={item}/>
+                <CartItemRemoveButton item={item}>Del</CartItemRemoveButton>
             </ActionsWrapper>
 
         </Container>

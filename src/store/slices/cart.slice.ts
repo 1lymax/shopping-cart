@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-import {CartState, CartUnit} from "../../types/cart.type";
+import {ICartState, ICartUnit} from "../../types/cart.type";
 
 
-const initialState: CartState = {
+const initialState: ICartState = {
     items: [],
     totalItems: 0,
     totalPrice: 0,
@@ -11,11 +11,12 @@ const initialState: CartState = {
     dragActive: false
 }
 
+
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addToCart: (state, action: PayloadAction<CartUnit>) => {
+        addToCart: (state, action: PayloadAction<ICartUnit>) => {
             const updatedItem = state.items.find((item) => item.id === action.payload.id);
             if (updatedItem) {
                 updatedItem.quantity++;
@@ -23,11 +24,11 @@ const cartSlice = createSlice({
                 state.items.push(action.payload);
             }
         },
-        incrementQuantity: (state, action: PayloadAction<CartUnit>) => {
+        incrementQuantity: (state, action: PayloadAction<ICartUnit>) => {
             const item = state.items.find((item) => item.id === action.payload.id);
             if (item) item.quantity++;
         },
-        decrementQuantity: (state, action: PayloadAction<CartUnit>) => {
+        decrementQuantity: (state, action: PayloadAction<ICartUnit>) => {
             const item = state.items.find((item) => item.id === action.payload.id);
             if (item)
                 if (item.quantity === 1) {
@@ -36,13 +37,13 @@ const cartSlice = createSlice({
                     item.quantity--;
                 }
         },
-        setQuantity: (state, action: PayloadAction<CartUnit>) => {
+        setQuantity: (state, action: PayloadAction<ICartUnit>) => {
             const item = state.items.find((item) => item.id === action.payload.id);
             if (item)
                 // If quantity is smaller than one then we set one
                 item.quantity = action.payload.quantity >= 1 ? action.payload.quantity : 1;
         },
-        removeItem: (state, action: PayloadAction<CartUnit>) => {
+        removeItem: (state, action: PayloadAction<ICartUnit>) => {
             const removeItem = state.items.filter((item) => item.id !== action.payload.id);
             state.items = removeItem;
         },

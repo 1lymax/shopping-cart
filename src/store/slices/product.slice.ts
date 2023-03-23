@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-import {Product, ProductState} from "../../types/product.type";
+import {IProduct, IProductState} from "../../types/product.type";
 
-const initialState: ProductState = {
+const initialState: IProductState = {
     products: []
 }
 
@@ -11,12 +11,11 @@ const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-        setProducts: (state, action: PayloadAction<Product[]>) => {
+        setProducts: (state, action: PayloadAction<IProduct[]>) => {
             state.products = action.payload
         },
     },
 });
 
 export const productReducer = productSlice.reducer;
-export const productActionCreators = productSlice.actions
 export const {setProducts} = productSlice.actions

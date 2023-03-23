@@ -11,8 +11,9 @@ interface FetchProductFromApiProps {
 
 const fetchProductsFromApi = async (payload: FetchProductFromApiProps) => {
     const { limit, offset } = payload
-    const result = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${offset}`)
-        .then(response => response.json())
+    const result = await fetch(
+        `https://dummyjson.com/products?limit=${limit}&skip=${offset}`
+    ).then(response => response.json())
     return result
 }
 

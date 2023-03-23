@@ -1,10 +1,10 @@
-export interface Product {
+export interface IProduct {
     id: number;
     title: string;
     thumbnail: string;
     price: number;
 }
 
-export interface ProductState {
-    products: Product[]
+export interface IProductState {
+    products: IProduct[]
 }
