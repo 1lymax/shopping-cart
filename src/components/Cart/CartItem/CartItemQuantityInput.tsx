@@ -14,10 +14,10 @@ interface ICartItemQuantityInputProps {
 }
 
 const CartItemQuantityInput: FC<ICartItemQuantityInputProps> = ({ item }) => {
-    const { onChange } = useCartItemQuantityInput(item)
+    const { value, onChange } = useCartItemQuantityInput(item)
 
     return (
-        <QuantityInput onChange={onChange}/>
+        <QuantityInput onChange={onChange} value={value}/>
     );
 };
 
