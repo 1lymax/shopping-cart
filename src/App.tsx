@@ -4,9 +4,9 @@ import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
 import {useCartActions} from "./hooks/actions";
 import CartFloatingContainer from "./components/Cart/CartFloatingContainer";
-import {Localstorage} from "./store/LocalStorage/LocalStorage";
+import {LocalStorage} from "./store/LocalStorage/LocalStorage";
 
-export const appClientStorage = new Localstorage()
+export const appClientStorage = new LocalStorage()
 
 function App() {
     const { addToCart, setTotalItems, setTotalPrice } = useCartActions()

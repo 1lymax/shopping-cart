@@ -4,14 +4,14 @@ export interface ILocalStorage {
     removeItem(Key: string): void;
 }
 
-export class Localstorage implements ILocalStorage{
-    private static instance: Localstorage
+export class LocalStorage implements ILocalStorage{
+    private static instance: LocalStorage
 
     constructor() {
-        if(Localstorage.instance){
-            return Localstorage.instance
+        if(LocalStorage.instance){
+            return LocalStorage.instance
         }
-        Localstorage.instance = this
+        LocalStorage.instance = this
     }
 
     public getItem(key: string): string | null {
