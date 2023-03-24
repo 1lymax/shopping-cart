@@ -4,14 +4,17 @@ import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
 import {useCartActions} from "./hooks/actions";
 import CartFloatingContainer from "./components/Cart/CartFloatingContainer";
+import {Localstorage} from "./store/LocalStorage/LocalStorage";
 
+export const appClientStorage = new Localstorage()
 
 function App() {
     const { addToCart, setTotalItems, setTotalPrice } = useCartActions()
 
+
     // initialize cart if localstorage with cart data is not empty
     useEffect(() => {
-        const storedCart = localStorage.getItem('cart')
+        const storedCart = appClientStorage.getItem('cart')
         if (storedCart) {
             const cart = JSON.parse(storedCart)
             for (let item of cart) {

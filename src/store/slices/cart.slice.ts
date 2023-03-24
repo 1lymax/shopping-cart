@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 import {ICartState, ICartUnit} from "../../types/cart.type";
+import {appClientStorage} from "../../App";
 
 
 const initialState: ICartState = {
@@ -51,7 +52,7 @@ const cartSlice = createSlice({
             state.totalItems = state.items.reduce(function (prev, cur) {
                 return prev + cur.quantity;
             }, 0);
-            localStorage.setItem('cart', JSON.stringify(state.items))
+            appClientStorage.setItem('cart', JSON.stringify(state.items))
 
         },
         setTotalPrice: (state) => {
