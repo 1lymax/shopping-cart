@@ -14,10 +14,10 @@ interface ICartItemIncrementQuantityButtonProps {
 }
 
 const CartItemIncrementQuantityButton: FC<ICartItemIncrementQuantityButtonProps> = ({ item }) => {
-    const buttonProps = useCartItemIncrementQuantity(item)
+    const { onClick } = useCartItemIncrementQuantity(item)
 
     return (
-        <IncrementButton {...buttonProps}>
+        <IncrementButton onClick={onClick}>
             +
         </IncrementButton>
     );

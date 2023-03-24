@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import React, {PropsWithChildren} from 'react';
 import {ICartUnit} from "../../../types/cart.type";
-import {Button} from "../../../theme/Button";
+import {PrimaryButton} from "../../../theme/PrimaryButton";
 import {useCartItemRemoveButton} from "../../../hooks/Cart/useCartItemRemoveButton";
 
-const RemoveButton = styled(Button)`
+const RemoveButton = styled(PrimaryButton)`
 margin-left: 10px;
 `
 
@@ -14,10 +14,10 @@ type CartItemRemoveButtonProps = {
 
 const CartItemRemoveButton = (props: PropsWithChildren<CartItemRemoveButtonProps>) => {
     const {item,children} = props
-    const buttonProps = useCartItemRemoveButton(item)
+    const { onClick } = useCartItemRemoveButton(item)
 
     return (
-        <RemoveButton {...buttonProps}>
+        <RemoveButton onClick={onClick}>
             {children}
         </RemoveButton>
     );

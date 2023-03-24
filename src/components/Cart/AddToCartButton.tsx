@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 
-import {Button} from "../../theme/Button";
+import {PrimaryButton} from "../../theme/PrimaryButton";
 import {IProduct} from "../../types/product.type";
 import {useAppSelector} from "../../hooks/appHook";
 import {useAddToCart} from "../../hooks/Cart/useAddToCart";
 
-const AddButton = styled(Button)``
+const AddButton = styled(PrimaryButton)``
 
 
 interface IAddToCartButtonProps {
@@ -14,13 +14,13 @@ interface IAddToCartButtonProps {
 }
 
 const AddToCartButton: FC<IAddToCartButtonProps> = ({ product }) => {
-    const buttonProps = useAddToCart(product)
+    const { onClick } = useAddToCart(product)
     const { items } = useAppSelector(state => state.cart)
     const isInCart = items.find(item => item.id === product.id)
 
 
     return (
-        <AddButton {...buttonProps}>
+        <AddButton onClick={onClick}>
             {isInCart ? 'Already added' : 'Add to Cart'}
         </AddButton>
     );

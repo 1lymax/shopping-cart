@@ -14,10 +14,10 @@ interface ICartItemDecrementQuantityButtonProps {
 }
 
 const CartItemDecrementQuantityButton: FC<ICartItemDecrementQuantityButtonProps> = ({ item }) => {
-    const buttonProps = useCartItemDecrementQuantity(item)
+    const { onClick } = useCartItemDecrementQuantity(item)
 
     return (
-        <DecrementButton {...buttonProps}>
+        <DecrementButton onClick={onClick}>
             -
         </DecrementButton>
     );
